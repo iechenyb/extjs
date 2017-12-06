@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" type="text/css" href="../resources/css/ext-all.css"/>
+      <script type="text/javascript" src="../adapter/ext/ext-base.js"></script>
+      <script type="text/javascript" src="../ext-all.js"></script>
+      <script type="text/javascript">
+         Ext.onReady(function() {
+            var win = new Ext.Window({
+               id: 'myWin',
+               title: '窗体',
+               height: 500,
+               x:20,y:40,
+               width: "80%",
+               closable: false,//禁用关闭按钮
+               draggable: true,//紧张拖拽
+               resizable: true,//固定大小，不允许拉伸
+               collapsible: true,//可以折叠
+               bodyStyle: 'background:#fff; padding:10px;',
+               //html:'窗口内容',
+               items: [{
+                  id: 'panel_01',
+                  //可以通过xtype 创建组件
+                  xtype: 'panel',
+                  title: 'panel',
+                  width: "100%",
+                  height: 200,
+                  html: 'panel 内容'
+               }, {
+                  xtype: 'button',
+                  text: '点击隐藏',
+                  //点击按钮会触发handler的处理函数
+                  handler: function (btn) {
+                     alert(btn.text)
+                     //win.hide();
+                  }
+               }]
+            });
+            win.show();
+            /* win.hide();*/
+            var win2=new Ext.Window({
+               id:'myWin2',
+               title:"标题",
+               x:20,y:40,
+               height:300,
+               width:400,
+               resizable: true,
+               modal: false,
+               closable: false,
+               maximizable: true,
+               minimizable: true,
+               //渲染到页面
+               rendTo:Ext.getBody(),
+               tbar:[{
+                  text:' 按钮一',
+                  handler:function(btn){
+                     //通过Ext提供的方法获取制定id的组件
+                     alert(Ext.getCmp("myWin2").title)
+                  }
+               },{
+                  text:' 按钮二',
+                  handler:function(btn){
+                     //通过xtype或者是选择器选择上级的组件
+                     console.log(btn);
+                    // alert(btn.up("window").title)
+                  }
+               },{
+                  text:' 按钮三',
+                  handler:function(btn){
+                     //直接访问上级组件
+                     alert(btn.ownerCt.ownerCt.title);
+                  }
+               }]
+            })
+            win2.show();
+         });
+      </script>
+   </head>
+   <body>
+   </body>
+</html>

@@ -1,0 +1,14 @@
+/*背景图片css */
+.customBackground {
+    height: 280px;
+    border: 1px solid #E8D59B;
+    border-radius: 4px;
+    background: url(../img/bg.jpg) right bottom no-repeat
+    #F7F0DB;
+}
+/*透明 和customBackground搭配使用   */
+.ex-panel {
+    border-style: solid;
+    border-color: transparent;
+    border-width: 0;
+}
