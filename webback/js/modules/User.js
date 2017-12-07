@@ -239,9 +239,24 @@ App.User = function() {
 				}, "->", {
 					xtype: "textfield",
 					id:"role-key",
+					/*on:{
+						"change":function (dd) {
+							console.log("dd:"+dd);
+						}
+					},*/
+					listeners:{
+						change:function (dd) {
+							console.log("dd:"+dd.getValue());
+							//var role = this.grid.getTopToolbar().getComponent('role-key').getValue();
+							console.log("Search ..."+dd.getValue());
+							this.ownerCt.ownerCt.store.filter('role', dd.getValue(),true);
+							//window.store.filter('role', dd.getValue(),true);
+						}
+					},
 					emptyText: "请输入关键字"
 				}, {
 					xtype: "button",
+					id:'btn',
 					text: "查询",
 					iconCls: "x-btn-search",
 					scope: this,
@@ -284,13 +299,15 @@ App.User = function() {
 					sortable: false,
 					dataIndex: "remark"
 				}],
-				
 				border: false,
 				viewConfig: {
 					forceFit: true
 				}
 			});
+
+			//Ext.getCmp("role-key").on("change", function () { alert(this.grid);}, this);
 			panel.add(this.grid);
+			//Ext.getCmp("btn").on("click", function () { alert(this.grid);}, this);
 		},
 		
 		//查询

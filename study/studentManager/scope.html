@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <link rel="stylesheet" type="text/css" href="../resources/css/ext-all.css"/>
+      <script type="text/javascript" src="../adapter/ext/ext-base.js"></script>
+      <script type="text/javascript" src="../ext-all.js"></script>
+      <script type="text/javascript">
+         //作用域测试
+         var Taa = "我是Window域AA!";
+         function ScopeTest() {//作用域测试
+            var Taa = "我是Taa对象域AA!";
+            var Tbb = { aa: "我是Tbb对象AA!", bb: "我是Tbb对象BB!" };
+            var Tcc = { aa: "我是Tcc对象AA!", bb: "我是Tcc对象BB!", cc: "我是Tcc对象CC!" }
+            var Tdd = { aa: "我是Tdd对象AA!", bb: "我是Tcc对象BB!", cc: "我是Tcc对象CC!" }
+            var win = new Ext.Window({
+               title: "WindowsTitle", width: 200, height: 500,
+               items: [
+                  { xtype: "button", id: "btnXtype", text: "测试作用域1" },
+                        new Ext.Button({ id: "btnExt", text: "测试作用域2" },
+                  { xtype: "textfield", id: "btnText", emptyText: "描述" }
+                  )
+               ]
+            });
+            win.show();
+            Ext.getCmp("btnXtype").on("click", function () { alert(window.Taa); alert(this.aa); }, Tbb)
+            Ext.getCmp("btnExt").on("click", function () { alert(this.aa) }, Tcc);
+            Ext.getCmp("btnText").on("click", function () {
+               alert(this.aa)
+            }, Tdd);
+         }
+
+         function createWin() {
+            var win = new Ext.Window({
+               title: "Window标题", height: 500, width: 300,
+               items: [
+                  new Ext.form.TextField({ id: "txtTest" }),
+                  { xtype: "textfield", id: "txtUserName", fieldLabel: "用户名", emptyText: "请输入名字", readOnly: true },
+                  { xtype: "button", id: "btnHandler", text: "Handler事件处理",//handler事件处理
+                     handler: function () { alert('测试handler事件！'); btnHandler("Test1", "test2"); }
+                  },
+                  new Ext.Button({ id: 'btnListener', text: 'Listeners多事件监听', minWidth: '200',
+                     listeners: {//多事件监听
+                        "mouseout": function () { alert('你已离开！') },
+                        "click": function () { alert('那点我了！') },
+                        "disable": function () { alert('触发Listeners的disable事件') }
+                        //on 属性，也能实现同样的功能
+                     }
+                  }),
+                  new Ext.Button({
+                     id: "btnHandlerTwo", text: "处理前两个按钮事件测试",
+                     handler: function () {//
+                        alert("我是自己的id:" + this.id); //获取自己的id
+                        alert("我是自己的文本：" + this.text); //获取自己的text
+                        alert("Window的Title:" + this.ownerCt.title);
+                        alert("这是第一个按钮的文本：" + this.ownerCt.items.itemAt(1).text); //回到父容器items的1个索引的text
+                        alert("这是第二个按钮的文本：" + Ext.getCmp("btnListener").text); //Ext.getCmp通过Id获取text
+                        this.ownerCt.items.itemAt(1).setText("改变第一个文本内容！"); //修改属性
+                        Ext.getCmp("btnListener").disable(); //调用方法
+                     }
+                  })
+               ],
+               buttons: [
+                  { text: "保存", id: "btnSave", handler: function () { alert("获取输出文本：" + Ext.getCmp("txtTest").getValue()) } },
+                  { text: "取消", id: "btnCancel", listeners: { "click": function () { alert('你干嘛前取消啊！') } } }
+               ]
+            });
+            return win;
+         }
+         function Test() {     alert("Test链接！"); }
+
+         function btnClick(obj, e) {     alert(obj + ",这是你点我的效果！"); }
+
+         function btnHandler(obj, e) {     alert("源：" + obj + ";数：" + e); }
+         Ext.onReady(function() {
+            ScopeTest();
+            createWin().show();
+         });
+      </script>
+   </head>
+   <body>
+   </body>
+</html>
