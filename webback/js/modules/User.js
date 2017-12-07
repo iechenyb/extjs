@@ -238,6 +238,7 @@ App.User = function() {
 					handler: this.del
 				}, "->", {
 					xtype: "textfield",
+					id:"role-key",
 					emptyText: "请输入关键字"
 				}, {
 					xtype: "button",
@@ -294,8 +295,20 @@ App.User = function() {
 		
 		//查询
 		search: function() {
-			//console.log("Search ...");
-			this.store.reload();
+			var role = this.grid.getTopToolbar().getComponent('role-key').getValue();
+			console.log("Search ..."+role);
+			/*this.store.filter('role', role,true);//过滤指定的字段*/
+			/*this.store.filter('role', role,new RegExp(role,"g"));*///正则匹配 new RegExp("[^java]","i")
+			this.store.filterBy(function (record, id) {//过滤指定的多列
+				//console.log(id+","+record);
+				var has = record.get('remark') == role && record.get("name") == name;
+				//has = new RegExp(role).test(record.get("remark"));//单列过滤
+				has = new RegExp(role).test(record.get("remark"))||new RegExp(role).test(record.get("role"))
+				||new RegExp(role).test(record.get("name"));//整行进行匹配
+				console.log(has);
+				return has;
+			});
+			//this.store.reload();
 		},
 		
 		//新增

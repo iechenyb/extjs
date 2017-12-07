@@ -31,8 +31,8 @@ App.modifyPasswordWindow=function () {
 		title: '窗体',
 		height: 500,
 		width: "80%",
-		madal:true,
-		closable: false,//禁用关闭按钮
+		modal:true,
+		closable: true,//禁用关闭按钮
 		draggable: true,//紧张拖拽
 		resizable: true,//固定大小，不允许拉伸
 		collapsible: true,//可以折叠
