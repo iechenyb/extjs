@@ -1,0 +1,77 @@
+<style>
+    .list h1 {
+        margin-top: 4rem;
+        margin-bottom: 2.5rem;
+        font-size: 2.6rem;
+    }
+
+    [class*=am-u-] + [class*=am-u-]:last-child {
+        float: left;
+    }
+
+    [class*=am-u-] {
+        padding-left: .5rem;
+        padding-right: .5rem;
+    }
+
+    .list .sp {
+        border: solid 1px #eeeeee;
+        margin-bottom: 1rem;
+        padding: 1.1rem;
+    }
+
+    .list .sp:hover {
+        -webkit-box-shadow: 5px 5px 15px rgba(67, 72, 84, 1);
+        -moz-box-shadow: 5px 5px 15px rgba(67, 72, 84, 1);
+        -o-box-shadow: 5px 5px 15px rgba(67, 72, 84, 1);
+        box-shadow: 5px 5px 15px rgba(67, 72, 84, 1);
+        transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        cursor: pointer;
+    }
+
+    .list .sp h2 {
+        font-size: 1.4rem;
+        font-weight: normal;
+        margin: 0;
+        color: #333333;
+        height: 3rem;
+    }
+
+    .list .sp span {
+        height: 2rem;
+        width: 100%;
+        text-overflow: ellipsis;
+        font-size: 1rem;
+        color: #999999;
+    }
+
+    .list .sp .ms {
+        height: 2rem;
+        width: 100%;
+        font-size: 1rem;
+        color: #999999;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+    }
+
+    .list .sp img {
+        width: 100%;
+        min-height: 150px;
+        margin-bottom: 1rem;
+    }
+</style>
+<div class="am-g am-container list" ng-repeat="item in kqsp.sp">
+    <h1 class="am-text-center">{{item.title}}</h1>
+    <div class="am-u-md-3 am-u-sm-12" ng-repeat="x in item.list">
+        <div class="sp" ui-sref="kqsp.sp({idx1:$parent.$index,idx2:$index})">
+            <h2>{{x.title}}</h2>
+            <span>{{x.data}}</span>
+            <img ng-src="{{x.img}}">
+            <div class="ms">{{x.description}}</div>
+        </div>
+    </div>
+</div>

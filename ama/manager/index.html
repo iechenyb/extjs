@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理系统</title>
+    <link rel="stylesheet" href="../cdn/amazeui.min.css">
+    <link rel="stylesheet" href="../cdn/index.css">
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<mytop></mytop>
+<div class="am-g">
+    <div class="am-u-sm-1">&nbsp;</div>
+    <div class="am-u-sm-2">
+        <ul class="am-list admin-sidebar-list" id="collapase-nav-1">
+            <li  class="am-panel">
+                <a data-am-collapse="{parent: '#collapase-nav-1'}" href="#/"><i class="am-icon-home am-margin-left-sm"></i> {{rootName}}</a>
+            </li>
+            <li class="am-panel">
+                <a data-am-collapse="{parent: '#collapase-nav-1', target: '#user-nav'}">
+                    <i class="am-icon-users am-margin-left-sm"></i>会员管理<i class="am-icon-angle-right am-fr am-margin-right"></i>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub" id="user-nav">
+                    <li><a ui-sref="menu({id:'user/index.html'})"><i class="am-icon-user am-margin-left-sm"></i> 会员管理 </a></li>
+                </ul>
+            </li>
+            <li class="am-panel">
+                <a data-am-collapse="{parent: '#collapase-nav-1', target: '#user-nav1'}">
+                    <i class="am-icon-users am-margin-left-sm"></i>系统管理<i class="am-icon-angle-right am-fr am-margin-right"></i>
+                </a>
+                <ul class="am-list am-collapse admin-sidebar-sub" id="user-nav1">
+                    <li><a ui-sref="menu({id:'user/index.html'})"><i class="am-icon-user am-margin-left-sm"></i> 用户管理 </a></li>
+                    <li><a ui-sref="menu({id:'http://localhost:3000/extjs/ama/manager/role/index.html'})"><i class="am-icon-user am-margin-left-sm"></i> 角色管理 </a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <div class="am-u-sm-9" style="text-align: left">
+        <div class="" ui-view></div>
+    </div>
+</div>
+<!--<myfooter></myfooter>-->
+</body>
+<script src="../cdn/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script type="text/javascript" src="../cdn/angular.min.js"></script><!--1.5.7-->
+<script type="text/javascript" src="http://apps.bdimg.com/libs/angular.js/1.3.0-beta.8/angular-animate.min.js"></script>
+<script type="text/javascript" src="../cdn/angular-ui-router.min.js"></script><!--0.3.1-->
+<script type="text/javascript" src="../js/pub.js"></script>
+<script type="text/javascript" src="../component/footer/index.js"></script>
+<script type="text/javascript" src="../component/header/index.js"></script>
+<script type="text/javascript" src="../component/top/index.js"></script>
+<script type="text/javascript" src="../component/common.js"></script>
+<script type="text/javascript" src="index.js"></script>
+</html>

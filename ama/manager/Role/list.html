@@ -1,0 +1,70 @@
+<div class="am-g">
+    <div class="am-u-sm-1">&nbsp;</div>
+    <div class="am-u-sm-10">
+        <table class="am-table">
+            <tr><th>角色名称</th> <th>角色描述</th><td>操作</td></tr>
+            <tr ng-repeat="x in items"><td> {{ x.id }}</td> <td> {{ x.name }}</td>
+                <td>
+                    <button type="button" class="am-btn am-btn-success" ng-click="delRole(x.id)">删除角色</button>
+                    <!--<button type="button" class="am-btn am-btn-success" ng-click="addRole()">增加角色</button>-->
+                    <button type="button" class="am-btn am-btn-success" ng-click="">修改角色</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="am-u-sm-1">&nbsp;</div>
+    <div class="am-u-sm-4">&nbsp;</div>
+    <div class="am-u-sm-8"><div id="page"></div></div>
+   <!-- <button
+            type="button"
+            class="am-btn am-btn-primary"
+            data-am-modal="{target: '#doc-modal-1', closeViaDimmer: 0, width: 400, height: 225}">
+        增加角色
+    </button>-->
+    <div class="am-modal am-modal-no-btn" tabindex="-1" id="doc-modal-1">
+        <div class="am-modal-dialog">
+            <div class="am-modal-hd">增加角色
+                <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
+            </div>
+            <div class="am-modal-bd">
+                <button type="button" class="am-btn am-btn-success" ng-click="addRole()">增加角色</button>
+            </div>
+        </div>
+    </div>
+   <!-- <div data-am-page="{pages:10,jump:'http://hersface.com/p/%page%'}"></div>-->
+   <!-- <div data-am-page="{pages:10}"></div>
+    <div data-am-page="{pages:10,theme:'secondary'}"></div>
+    <div data-am-page="{pages:10,theme:'success'}"></div>
+    <div data-am-page="{pages:10,theme:'warning'}"></div>
+    <div data-am-page="{pages:10,theme:'danger'}"></div>-->
+   <!-- <script type="text/javascript">
+        var jump = function(context) {//注意在全局作用域下定义
+            console.log('当前第：' + context.option.curr + "页");
+        }
+    </script>
+    <div data-am-page="{pages:10,jump:jump}"></div>-->
+    <script type="text/javascript">
+       /* $("#page").page({
+         pages:20, //页数
+         curr: 1, //当前页
+         type: 'default', //主题
+         groups: 5, //连续显示分页数
+         prev: '<', //若不显示，设置false即可
+         next: '>', //若不显示，设置false即可
+         first: "首页",
+         last: "尾页", //false则不显示
+         render: function(context, $el, index) { //渲染[context：对this的引用，$el：当前元素，index：当前索引]
+         //逻辑处理
+         if (index == 'last') { //虽然上面设置了last的文字为尾页，但是经过render处理，结果变为最后一页
+              $el.find('a').html('最后一页');
+              return $el; //如果有返回值则使用返回值渲染
+         }
+         return false; //没有返回值则按默认处理
+         },
+         jump: function(context, first) {
+             if (first)return;
+             console.log('当前第：' + context.option.curr + "页!");
+         }
+         });*/
+    </script>
+</div>
