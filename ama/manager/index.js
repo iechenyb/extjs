@@ -7,7 +7,7 @@ angular.module("myApp",["ui.router","mytop","myheader","myfooter"])
         $urlRouterProvider.when("", "/main");
         $stateProvider.state("main",{
             url:"/main",
-            templateUrl:"index.html",
+            templateUrl:"welcome.html",
             abstract:true,
             controller:function($scope,$state) {
             }
@@ -17,12 +17,15 @@ angular.module("myApp",["ui.router","mytop","myheader","myfooter"])
                $http.get("../../data/sp/shoes.json",{cache:true}).success(function(data){
                     $scope.list = data;
                 });
-                console.log("加载页面："+$state.params.id);
+                console.log("控制器开始渲染页面："+$state.params.id);
                 $scope.param=$state.params.id;
             },
             templateUrl:function getTemplateUrl($params) {
-                console.log("目的页面："+$params.id);
-                return $params.id;
+                //先执行
+                //http://localhost:8088/extjs/ama/manager/defult.html 跳转到缺省的页面
+                var toPage = "http://localhost:8088/extjs/ama/manager/"+$params.id;
+                console.log("跳转到目的页面："+toPage);
+                return toPage;
             },
         });
         $urlRouterProvider.otherwise("/main");
