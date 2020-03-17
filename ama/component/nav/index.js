@@ -6,7 +6,7 @@
         }
     );*/
   };
-  var url = basePath+'component/nav/index.html';
+  var url = basePath+'component/nav/PageTab.html';
   var nav = {
     restrict: 'E',
     templateUrl: url,

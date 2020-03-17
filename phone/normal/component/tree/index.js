@@ -1,6 +1,6 @@
 (function anyName() {
   var moduleName="treesys";
-  var url = "http://localhost:3000/extjs/phone/normal/component/tree/index.html";
+  var url = "http://localhost:3000/extjs/phone/normal/component/tree/PageTab.html";
   angular.module(moduleName, ['ui.router']).component(moduleName, {
     restrict: 'E',
     templateUrl: url,

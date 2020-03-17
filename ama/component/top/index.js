@@ -2,7 +2,7 @@
   var topController=function($scope,$rootScope,$state,$http,$location){
 
   };
-  var url = basePath+'component/top/index.html';
+  var url = basePath+'component/top/PageTab.html';
   var top = {
     restrict: 'E',
     templateUrl: url,

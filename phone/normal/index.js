@@ -104,6 +104,11 @@ var myApp = angular.module('myApp', ['ui.router',"jhheader","jhfooter","advbar",
             })
             .state('role.list', {
                 url: '/list',
+                controller:function($scope){
+                  $scope.showItem=function showItem(num){
+                      alert(num);
+                  };
+                },
                 templateUrl: 'list.html',
             })
             .state('role.mod', {

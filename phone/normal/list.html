@@ -6,8 +6,8 @@
 
 <section data-am-widget="accordion" class="am-accordion am-accordion-gapped" data-am-accordion='{  }'>
     <dl class="am-accordion-item am-active" ng-repeat=" num in [1,2,3,4,5,6,7,8,9,10]" >
-        <dt class="am-accordion-title" ng-click="alert(num);">
-            <img src="1.jpg"/>28码计划员{{num}}号
+        <dt class="am-accordion-title" >
+            <img src="1.jpg"/>28码计划员{{num}}号<button ng-click="showItem(num);">点击</button>
         </dt>
         <dd class="am-accordion-bd am-collapse am-in">
             <!-- 规避 Collapase 处理有 padding 的折叠内容计算计算有误问题， 加一个容器 -->

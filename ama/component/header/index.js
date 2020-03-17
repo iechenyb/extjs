@@ -6,7 +6,7 @@
         }
     );
   };
-  var url = basePath+'component/header/index.html';
+  var url = basePath+'component/header/PageTab.html';
   var header = {
     restrict: 'E',
     templateUrl: url,

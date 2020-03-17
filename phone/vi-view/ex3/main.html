@@ -1,0 +1,29 @@
+<!-- Main.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://localhost:3000/extjs/ama/cdn/amazeui.min.css"/>
+</head>
+<body ng-app="myApp">
+<h1>多ui-view</h1>
+<div class="am-g">
+    <div class="am-u-sm-12 am-text-center" >
+        <div ui-view="top"></div>
+    </div>
+    <div class="am-u-sm-4 am-text-center" >
+        <div ui-view="left"></div>
+    </div>
+    <div class="am-u-sm-8 am-text-center" >
+        <div ui-view="right"></div>
+    </div>
+    <div class="am-u-sm-12 am-text-center" >
+        <div ui-view="bottom"></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="http://localhost:3000/extjs/ama/cdn/angular.min.js"></script>
+<script type="text/javascript" src="http://localhost:3000/extjs/ama/cdn/angular-ui-router.min.js"></script><!--0.3.1-->
+<script src="App.js"></script>
+<html>

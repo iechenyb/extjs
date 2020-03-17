@@ -30,13 +30,13 @@ Ext.samples.samplesCatalog = [{
         desc: 'DataView and TreePanel sample that demonstrates dragging data items from a DataView into a TreePanel.'
     }/*,{
         text: 'Image Organizer',
-        url:  'image-organizer/index.html',
+        url:  'image-organizer/PageTab.html',
         icon: 'image-organizer.gif',
         desc: 'Image management application sample utilizing MySQL lite and Ext.Direct.',
         status: 'new'
     }*/,{
         text: 'Ext JS API Documentation',
-        url:  '../docs/index.html',
+        url:  '../docs/PageTab.html',
         icon: 'docs.gif',
         desc: 'API Documentation application.',
         status: 'modified'

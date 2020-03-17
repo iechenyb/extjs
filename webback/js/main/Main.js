@@ -89,13 +89,13 @@ App.createNorth = function() {
 					handler: function() {
 						App.modifyPasswordWindow();
 						//Ext.Msg.alert("提示", "你确认要修改密码！");
-						//window.location.href = "index.html";
+						//window.location.href = "PageTab.html";
 					}
 				}, {
 					text: "退出系统",
 					iconCls: "x-btn-exit",
 					handler: function() {
-						window.location.href = "index.html";
+						window.location.href = "PageTab.html";
 					}
 				}]
 			})

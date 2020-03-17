@@ -12,7 +12,7 @@
         }
     );
   };
-  var url = basePath+'component/menu/index.html';
+  var url = basePath+'component/menu/PageTab.html';
   var menu = {
     restrict: 'E',
     templateUrl: url,

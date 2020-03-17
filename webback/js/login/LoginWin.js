@@ -93,7 +93,7 @@ App.LoginWin = function() {
 				this.form.get("msg").update("<center>login ...</center>");
 				this.form.buttons[0].disabled = true;
 				sleep(1000);
-				window.location.href = "main.html";
+				window.location.href = "index.html";
 			}
 		}
 	};

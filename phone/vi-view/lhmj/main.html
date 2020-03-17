@@ -1,0 +1,58 @@
+<!-- Main.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="http://localhost:3000/extjs/ama/cdn/amazeui.min.css"/>
+    <link rel="stylesheet" href="http://localhost:3000/extjs/ama/cdn/amazeui.tree.css">
+</head>
+<body ng-app="myApp">
+<div class="am-g">
+    <div class="am-u-sm-12" >
+        <div ui-view="top"></div>
+    </div>
+    <!--<div class="am-u-sm-12" >
+        <div data-am-widget="slider" class="am-slider am-slider-default" style="height: 150px"
+             data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;slideshow&quot;:false}' >
+            <ul class="am-slides">
+                <li>
+                    <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg" height="150px">
+                    <div class="am-slider-desc">这是标题标题标题标题标题标题标题0</div>
+                </li>
+                <li>
+                    <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" height="150px">
+                    <div class="am-slider-desc">这是标题标题标题标题标题标题标题1</div>
+                </li>
+                <li>
+                    <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg" height="150px">
+                    <div class="am-slider-desc">这是标题标题标题标题标题标题标题2</div>
+                </li>
+                <li>
+                    <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg" height="150px">
+                    <div class="am-slider-desc">这是标题标题标题标题标题标题标题3</div>
+                </li>
+            </ul>
+        </div>
+    </div>-->
+    <div class="am-u-sm-2" >
+        <div ui-view="left"></div>
+    </div>
+    <div class="am-u-sm-10 am-text-center" >
+       <!-- <div ui-view="right"></div>-->
+        <iframe frameborder="0" width="100%"  height="700px" id="centerZone" name="centerZone"
+                src="http://localhost:3000/extjs/ama/manager/kqsp/index.html#/index/list"></iframe>
+    </div>
+    <!--<div class="am-u-sm-12 am-text-center" >
+        <div ui-view="bottom"></div>
+    </div>-->
+</div>
+</body>
+<script type="text/javascript"  src="http://localhost:3000/extjs/ama/cdn/jquery.min.js"></script>
+<script type="text/javascript" src="http://localhost:3000/extjs/ama/cdn/angular.min.js"></script>
+<script type="text/javascript" src="http://localhost:3000/extjs/ama/cdn/angular-ui-router.min.js"></script><!--0.3.1-->
+<script type="text/javascript" src="http://localhost:3000/extjs/ama/cdn/amazeui.tree.js"></script>
+<script type="text/javascript" src="http://cdn.amazeui.org/amazeui/2.7.2/js/amazeui.min.js"></script>
+<script type="text/javascript" src="http://localhost:3000/extjs/ama/cdn/amazeui.widgets.helper.min.js"></script>
+<script src="App.js"></script>
+<html>

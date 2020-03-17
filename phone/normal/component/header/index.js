@@ -1,6 +1,6 @@
 (function anyName() {
   var moduleName="jhheader";
-  var url = "http://localhost:3000/extjs/phone/normal/component/header/index.html";
+  var url = "http://localhost:3000/extjs/phone/normal/component/header/PageTab.html";
   angular.module(moduleName, ['ui.router']).component(moduleName, {
     restrict: 'E',
     templateUrl: url,
